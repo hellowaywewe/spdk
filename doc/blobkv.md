@@ -21,8 +21,10 @@ Our original design was to build the key/value device abstraction layer on the s
 
 ### phases one
 We're going to build BlobKV on the block device abstraction layer and design for it to a set of key/value api for object store. We can use the block device abstraction layer to convert object store into block store, and then to convert block store into blob store. Simply, it means key/value is  mapped to the logical block address and then to physical block address (like key/value --> LBA --> PBA).
+
 ### phases two
 when the phases one is completed, we will succeed in realizing the BlobKV. And then, We're going to design the key/value device abstraction layer on the same floor of the block device abstraction layer. the key/value device abstraction layer can provide:
     * a driver module API for implementing key/value object drivers for Blob object, NVMe, etc.
-    
+    * an application API for enumerating and claiming SPDK key/value object devices and performance operations (read, write, unmap, etc.) on those devices.
+Complete integration of the two phases，which is in line with our original goal. 
 
