@@ -14,7 +14,7 @@ Serverless computing is a FaaS ( Function as a Service ) framework.  When client
 
 - Block storage in SPDK applications is provided by the SPDK bdev layer.  SPDK bdev includes:
 
-    * a generic class for implementing bdev drivers on those devices
+    * a generic bdev class for implementing bdev drivers on those devices
     * bdev drivers for NVMe, Blob bdev, Linux AIO and Ceph RBD
     
- We design 
+Our original design was to build key/value device abstraction layer on the same floor of the block device abstraction layer，and the key/value device abstraction layer connects up to the BlobKV and down to the NVMe device. Simply, it means key/value is directly mapped to the physical block address (like key/value --> PBA).
