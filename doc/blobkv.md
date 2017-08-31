@@ -15,6 +15,6 @@ Serverless computing is a FaaS ( Function as a Service ) framework.  When client
 ## Blobkv design proposal
 ![SPDK BlobKV Archtecture Proposal](https://github.com/hellowaywewe/spdk/blob/spdk-objectstore/doc/kv_api.png)
 
-In this proposal, the blobstore of SPDK have implemented the interface for blob the blobkv should be able to provide the interfaces of k-v for the application, such as kv_blob_read(struct spdk_bs_kv *k), which is according to the blobstore of SPDK.  
+Since the blobstore have had the functions of using the original blob of SPDK to operate directly the device, thus the blobkv should be able to provide the interfaces of k-v which are implemented by the blobstore for the application. For example, the param k of the kv_blob_read(struct spdk_bs_kv *k) in blobkv is needed to be converted to the param blob of spdk_bs_io_read_blob(struct spdk_blob *blob) in blobstore. 
  
 
