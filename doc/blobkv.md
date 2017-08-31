@@ -13,7 +13,7 @@ Serverless computing is a FaaS ( Function as a Service ) framework.  When client
 - blobkv builds upon existing infrastructure provided by blobstore and bdev layers
     
 ## Blobkv design proposal
-
+![SPDK BlobKV Archtecture Proposal](https://github.com/hellowaywewe/spdk/blob/spdk-objectstore/doc/kv_api.png)
 
  
 
